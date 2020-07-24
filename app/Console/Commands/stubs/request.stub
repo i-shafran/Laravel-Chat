@@ -1,0 +1,21 @@
+<?php
+
+namespace DummyNamespace;
+
+class DummyClass extends RequestAbstract
+{
+	/**
+	 * Get the validation rules that apply to the request.
+	 *
+	 * @return array
+	 */
+	public function rules()
+	{
+		return [
+			'event_id' => 'required|integer',
+			'ticket_id' => 'integer',
+			'points' => 'integer',
+			'fields' => 'array',
+		];
+	}
+}
