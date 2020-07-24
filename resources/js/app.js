@@ -24,8 +24,8 @@ Vue.use(BootstrapVue);
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-/*Vue.component('terminal-component', require('./components/TerminalComponent').default);
-Vue.component('volume-component', require('./components/VolumeComponent').default);
+Vue.component('chat', require('./components/Chat').default);
+/*Vue.component('volume-component', require('./components/VolumeComponent').default);
 Vue.component('depth-component', require('./components/DepthComponent').default);
 Vue.component('my-orders-component', require('./components/MyOrdersComponent').default);
 Vue.component('settings-component', require('./components/SettingsComponent').default);
@@ -35,7 +35,7 @@ Vue.component('wm-exchanger', require('./components/WMExchangerComponent').defau
 Vue.component('log-markets', require('./components/LogMarketComponent').default);
 Vue.component('log-orders', require('./components/LogOrdersComponent').default);
 Vue.component('binance-dex-depth', require('./components/BinanceDexDepthComponent').default);
-Vue.component('options_global', require('./components/OptionGlobalComponent').default)*/;
+Vue.component('options_global', require('./components/OptionGlobalComponent').default)*/
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

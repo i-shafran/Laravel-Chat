@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'IndexController@index');
-Route::get('page/{external_id}', 'IndexController@getPage');
+
+Route::post('messages', 'IndexController@sendMessages');
 
 
 Auth::routes();
