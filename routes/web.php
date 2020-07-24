@@ -14,3 +14,7 @@
 Route::get('/', 'IndexController@index');
 Route::get('page/{external_id}', 'IndexController@getPage');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
