@@ -25,6 +25,7 @@ Vue.use(BootstrapVue);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('chat', require('./components/Chat').default);
+Vue.component('private-chat', require('./components/PrivateChat').default);
 /*Vue.component('volume-component', require('./components/VolumeComponent').default);
 Vue.component('depth-component', require('./components/DepthComponent').default);
 Vue.component('my-orders-component', require('./components/MyOrdersComponent').default);

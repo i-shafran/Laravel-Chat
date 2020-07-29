@@ -13,10 +13,10 @@
 
 <script>
 	export default {
-		name: "chat",
+		name: "private-chat",
         mounted() {
-			window.Echo.channel('chat').listen('MessageEvent', ({message}) => {
-				this.messages.push(message.body);
+			window.Echo.private('room.2').listen('PrivateChatEvent', ({data}) => {
+				this.messages.push(data);
             });
         },
         data() {
@@ -27,7 +27,7 @@
         },
         methods: {
 			sendMessage() {
-				axios.post('/messages', {body: this.textMessage});
+				axios.post('/private_messages', {body: this.textMessage, room_id: 2});
 				
 				this.messages.push(this.textMessage);
 				this.textMessage = '';

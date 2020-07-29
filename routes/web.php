@@ -14,6 +14,7 @@
 Route::get('/', 'IndexController@index');
 
 Route::post('messages', 'IndexController@sendMessages');
+Route::post('private_messages', 'IndexController@sendPrivateMessages');
 
 
 Auth::routes();

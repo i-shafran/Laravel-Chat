@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Events\MessageEvent;
+use App\Events\PrivateChatEvent;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,12 @@ class IndexController extends Controller
 	
 	public function sendMessages(Request $request)
 	{
-		MessageEvent::dispatch($request->input('body'));
+		MessageEvent::dispatch($request->all());
+	}
+	
+	public function sendPrivateMessages(Request $request)
+	{
+		PrivateChatEvent::dispatch($request->all());
 	}
 
 }
