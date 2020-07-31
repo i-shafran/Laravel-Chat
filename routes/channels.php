@@ -17,6 +17,6 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 });
 
 Broadcast::channel('room.{room_id}', function ($user, $room_id) {
-    //return (int) $user->id === (int) $id;
-	return true;
+    return $user->rooms->contains($room_id); // If $user->rooms contains room_id return true 
+	//return true;
 });
