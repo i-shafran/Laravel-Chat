@@ -16,7 +16,7 @@
 		name: "private-chat",
         mounted() {
 			window.Echo.private('room.2').listen('PrivateChatEvent', ({data}) => {
-				this.messages.push(data);
+				this.messages.push(data.body);
             });
         },
         data() {

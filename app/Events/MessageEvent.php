@@ -24,7 +24,7 @@ class MessageEvent implements ShouldBroadcast
     public function __construct($message)
     {
         $this->message = $message;
-        $this->dontBroadcastToCurrentUser(); // The message is not duplicated
+        $this->dontBroadcastToCurrentUser(); // The message will be not duplicated
     }
 
     /**
