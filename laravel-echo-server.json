@@ -1,5 +1,5 @@
 {
-	"authHost": "http://test-work.local",
+	"authHost": "http://test-work.remote",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [],
 	"database": "redis",
@@ -9,9 +9,9 @@
 			"databasePath": "/database/laravel-echo-server.sqlite"
 		}
 	},
-	"devMode": true,
+	"devMode": false,
 	"host": null,
-	"port": "6001",
+	"port": "6002",
 	"protocol": "http",
 	"socketio": {},
 	"secureOptions": 67108864,
