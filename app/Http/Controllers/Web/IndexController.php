@@ -51,7 +51,7 @@ class IndexController extends Controller
 			abort(404);
 		}
 
-		return view('room', ["room" => $room]);
+		return view('room', ["room" => $room, "messages" => $room->messages]);
 	}
 
 }

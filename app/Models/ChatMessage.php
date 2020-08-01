@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\Room
+ * App\Models\ChatMessage
  *
  * @mixin \Eloquent
  */
-class Room extends Model  {
+class ChatMessage extends Model  {
 
 
-	public $table = "rooms";
+	public $table = "chat_messages";
 	
     /**
      * Attributes that should be mass-assignable.
@@ -20,7 +20,8 @@ class Room extends Model  {
      * @var array
      */
     protected $fillable = [
-    	"name"
+    	"message",
+		"room_id"
 	];
 
 	/**
@@ -50,17 +51,10 @@ class Room extends Model  {
 	 * @var bool
 	 */
 	public $timestamps = true;
-
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-	 */
-	public function users()
-	{
-		return $this->belongsToMany(User::class);
-	}
 	
-	public function messages()
+	public function room()
 	{
-		return $this->hasMany(ChatMessage::class);
+		return $this->belongsTo(Room::class);
 	}
+
 }

@@ -3,7 +3,7 @@
 @section('content')
     @if(Auth::check())
         <div class="container">
-            <private-chat :room="{{$room}}" :user="{{Auth::user()}}"></private-chat>
+            <private-chat :room="{{$room}}" :user="{{Auth::user()}}" :db_messages="{{$messages}}"></private-chat>
         </div>
     @endif
 @endsection

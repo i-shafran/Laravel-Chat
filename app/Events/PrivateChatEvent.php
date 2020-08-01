@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\ChatMessage;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -29,6 +30,7 @@ class PrivateChatEvent implements ShouldBroadcast
     public function __construct($data)
     {
         $this->data = $data;
+        ChatMessage::create(["room_id" => $this->data["room_id"], "message" => $this->data["body"]]);
 		$this->dontBroadcastToCurrentUser(); // The message will be not duplicated
     }
 
@@ -39,6 +41,6 @@ class PrivateChatEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('room.'.$this->data["room_id"]);
+        return new PresenceChannel('room.'.$this->data["room_id"]);
     }
 }
