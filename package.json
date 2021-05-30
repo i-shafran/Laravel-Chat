@@ -44,6 +44,6 @@
         "vue-template-compiler": "^2.6.10",
         "vue-toasted": "^1.1.27",
         "vue-toastr-2": "^0.0.10",
-        "ws": "^7.1.2"
+        "ws": "^7.4.6"
     }
 }
